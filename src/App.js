@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
-
+import Albums from './components/Albums/Albums';
+import Comments from './components/Comments/Comments';
+import FullPost from './components/FullPost/FullPost';
+import Pictures from './components/Pictures/Pictures';
+import Posts from './components/Posts/Posts';
 function App() {
+  const [selectedPost, setSelectedPost] = useState(0);
+  const [selectedAlbum, setSelectedAlbum] = useState(0);
+  console.log("[App.js] render");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <button onClick={() => setMessage("Bye")}>Toggle</button> */}
+      {/* <Posts setSelectedPost={setSelectedPost} />
+      <FullPost id={selectedPost}/> */}
+      <Albums setSelectedAlbum={setSelectedAlbum}/>
+      <Pictures id={selectedAlbum}/>
     </div>
   );
 }
-
 export default App;
